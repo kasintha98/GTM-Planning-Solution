@@ -3,8 +3,6 @@
 This is a simple full-stack **Go-To-Market (GTM) Planning Solution** developed to demonstrate core functionalities and concepts. 
 It mirrors real world GTM workflows by managing regional plans, tracking key performance indicators (KPIs) and validating forecast reliability.
 
----
-
 ## Business Scenario
 
 GTM Planning team creates and tracks strategic plans across regions (EMEA, APAC, Americas...) and products (S/4HANA Cloud, BTP, SuccessFactors...). Each plan has:
@@ -14,8 +12,6 @@ GTM Planning team creates and tracks strategic plans across regions (EMEA, APAC,
 - Forecast entries comparing projected values against actual values to measure planning reliability
 
 This app lets a GTM team manage these plans end-to-end through an insightful dashboard, CRUD interfaces and data visualizations.
-
----
 
 ## Features
 
@@ -27,9 +23,10 @@ This app lets a GTM team manage these plans end-to-end through an insightful das
 | **KPI Tracker** | Add/ edit/ delete KPI metrics. Track target vs. actual and filter by plan |
 | **Forecast Tracker** | Log forecast vs. actual entries. Visualize accuracy over time with a line chart |
 
----
 
 ## Architecture
+
+You can also find the exported Architecture diagram image file inside **Architecture Documents** folder for much clearer view.
 
 ```mermaid
 graph TB
@@ -72,6 +69,8 @@ graph TB
 ## Frontend Component Diagram
 
 The React frontend is organized as a route driven structure. It has pages that own their own UI widgets and Redux data access.
+
+You can also find the exported Frontend Component Diagram image file inside **Architecture Documents** folder for much clearer view.
 
 ```mermaid
 graph TB
@@ -137,6 +136,8 @@ graph TB
 
 ### Data Model
 
+You can also find the exported Data Model diagram image file inside **Architecture Documents** folder for much clearer view.
+
 ```mermaid
 erDiagram
     GTM_PLANS {
@@ -181,8 +182,6 @@ erDiagram
     GTM_PLANS ||--o{ FORECAST_ENTRIES : "has"
 ```
 
----
-
 ## Technology Stack
 
 ### Frontend
@@ -215,8 +214,6 @@ erDiagram
 - **MySQL 8+** (Used for production)
 - **H2** (Used for tests. H2 is in memory, no setup needed)
 
----
-
 ## Starting the application locally
 
 ### Prerequisites
@@ -227,8 +224,6 @@ erDiagram
 | Maven | 3.9+ |
 | Node.js | 22+ |
 | MySQL | 8+ |
-
----
 
 ### 1. Database Setup
 
@@ -248,8 +243,6 @@ spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
 ```
 
----
-
 ### 2. Start the Backend
 
 ```bash
@@ -258,9 +251,6 @@ cd backend
 ```
 
 The API starts at **http://localhost:8080**
-
-
----
 
 ### 3. Start the Frontend
 
@@ -272,9 +262,6 @@ npm run dev
 
 The app opens at **http://localhost:5173**
 
-
----
-
 ### Verify Everything Works
 
 ```bash
@@ -284,7 +271,6 @@ curl http://localhost:8080/api/plans
 # Should return: []
 ```
 
----
 
 ## API Reference
 
@@ -315,7 +301,7 @@ POST /api/plans
 }
 ```
 
----
+
 
 ### KPI Metrics - `/api/kpis`
 
@@ -342,7 +328,6 @@ POST /api/kpis
 }
 ```
 
----
 
 ### Forecast Entries - `/api/forecasts`
 
@@ -371,7 +356,6 @@ Test coverage includes:
 - KpiMetricServiceTest - KPI service unit tests including achievement rate calculation
 - GtmPlanControllerTest - controller integration tests with MockMvc
 
----
 
 ### Frontend (Vitest)
 
@@ -391,7 +375,6 @@ Test coverage includes:
 - utils.test.ts - Currency formatting, status badge variant logic
 - Dashboard.test.tsx - Component rendering and conditional display logic
 
----
 
 ## Design Decisions
 
